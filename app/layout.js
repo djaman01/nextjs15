@@ -1,16 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
+
+
 
 export const metadata = { //Nom onglet du site nextjs
   title: "Learn Next JS",
@@ -20,8 +22,9 @@ export const metadata = { //Nom onglet du site nextjs
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      {/* .className = default font of the application / .variable= pour l'utiliser ou on veut avec font-nomImportduFont */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
       >
         {children}
       </body>
